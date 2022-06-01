@@ -267,3 +267,49 @@
   });
 
 })()
+document.getElementById('html1').addEventListener("keyup", textEditor)
+    document.getElementById('css').addEventListener('keyup', textEditor)
+    document.getElementById('javascript').addEventListener('keyup', textEditor)
+
+    //document.querySelector('#css').addEventListner("keyup",textEditor);
+
+    // document.querySelector('#javascript').addEventListner("keyup",textEditor);
+    function textEditor() {
+        //alert("Hi")
+        let htmlBody = document.getElementById('html1').value;
+        let cssBody = "<style>" + document.getElementById('css').value + "</style>";
+        let javascriptBody = document.getElementById('javascript').value;
+        let output = document.getElementById('output');
+
+        output.contentDocument.body.innerHTML = htmlBody + cssBody;
+        output.contentWindow.eval(javascriptBody);
+
+    };
+    let htmlBodyCard = document.getElementById('html1');
+    let cssBodyCard = document.getElementById('css');
+    let javascriptBodyCard = document.getElementById('javascript');
+    let htmlBtn = document.getElementById('htmlbtn');
+    let cssBtn = document.getElementById('cssbtn');
+    let javascriptBtn = document.getElementById('javascriptbtn');
+    cssBodyCard.style.display= "none";
+    javascriptBodyCard.style.display= "none";
+
+
+    htmlBtn.addEventListener('click', function(){
+        htmlBodyCard.style.display = 'block';
+        cssBodyCard.style.display = 'none';
+        javascriptBodyCard.style.display = 'none';
+
+    })
+    cssBtn.addEventListener('click', function(){
+        htmlBodyCard.style.display = 'none';
+        cssBodyCard.style.display = 'block';
+        javascriptBodyCard.style.display = 'none';
+
+    })
+    javascriptBtn.addEventListener('click', function(){
+        htmlBodyCard.style.display = 'none';
+        cssBodyCard.style.display = 'none';
+        javascriptBodyCard.style.display = 'block';
+
+    })
