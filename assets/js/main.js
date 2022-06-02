@@ -4,7 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -109,7 +109,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -118,7 +118,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -128,7 +128,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -212,9 +212,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -222,7 +222,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);
@@ -267,49 +267,50 @@
   });
 
 })()
+
 document.getElementById('html1').addEventListener("keyup", textEditor)
-    document.getElementById('css').addEventListener('keyup', textEditor)
-    document.getElementById('javascript').addEventListener('keyup', textEditor)
+document.getElementById('css').addEventListener('keyup', textEditor)
+document.getElementById('javascript').addEventListener('keyup', textEditor)
 
-    //document.querySelector('#css').addEventListner("keyup",textEditor);
+//document.querySelector('#css').addEventListner("keyup",textEditor);
 
-    // document.querySelector('#javascript').addEventListner("keyup",textEditor);
-    function textEditor() {
-        //alert("Hi")
-        let htmlBody = document.getElementById('html1').value;
-        let cssBody = "<style>" + document.getElementById('css').value + "</style>";
-        let javascriptBody = document.getElementById('javascript').value;
-        let output = document.getElementById('output');
+// document.querySelector('#javascript').addEventListner("keyup",textEditor);
+function textEditor() {
+  //alert("Hi")
+  let htmlBody = document.getElementById('html1').value;
+  let cssBody = "<style>" + document.getElementById('css').value + "</style>";
+  let javascriptBody = document.getElementById('javascript').value;
+  let output = document.getElementById('output');
 
-        output.contentDocument.body.innerHTML = htmlBody + cssBody;
-        output.contentWindow.eval(javascriptBody);
+  output.contentDocument.body.innerHTML = htmlBody + cssBody;
+  output.contentWindow.eval(javascriptBody);
 
-    };
-    let htmlBodyCard = document.getElementById('html1');
-    let cssBodyCard = document.getElementById('css');
-    let javascriptBodyCard = document.getElementById('javascript');
-    let htmlBtn = document.getElementById('htmlbtn');
-    let cssBtn = document.getElementById('cssbtn');
-    let javascriptBtn = document.getElementById('javascriptbtn');
-    cssBodyCard.style.display= "none";
-    javascriptBodyCard.style.display= "none";
+};
+let htmlBodyCard = document.getElementById('html1');
+let cssBodyCard = document.getElementById('css');
+let javascriptBodyCard = document.getElementById('javascript');
+let htmlBtn = document.getElementById('htmlbtn');
+let cssBtn = document.getElementById('cssbtn');
+let javascriptBtn = document.getElementById('javascriptbtn');
+cssBodyCard.style.display = "none";
+javascriptBodyCard.style.display = "none";
 
 
-    htmlBtn.addEventListener('click', function(){
-        htmlBodyCard.style.display = 'block';
-        cssBodyCard.style.display = 'none';
-        javascriptBodyCard.style.display = 'none';
+htmlBtn.addEventListener('click', function () {
+  htmlBodyCard.style.display = 'block';
+  cssBodyCard.style.display = 'none';
+  javascriptBodyCard.style.display = 'none';
 
-    })
-    cssBtn.addEventListener('click', function(){
-        htmlBodyCard.style.display = 'none';
-        cssBodyCard.style.display = 'block';
-        javascriptBodyCard.style.display = 'none';
+})
+cssBtn.addEventListener('click', function () {
+  htmlBodyCard.style.display = 'none';
+  cssBodyCard.style.display = 'block';
+  javascriptBodyCard.style.display = 'none';
 
-    })
-    javascriptBtn.addEventListener('click', function(){
-        htmlBodyCard.style.display = 'none';
-        cssBodyCard.style.display = 'none';
-        javascriptBodyCard.style.display = 'block';
+})
+javascriptBtn.addEventListener('click', function () {
+  htmlBodyCard.style.display = 'none';
+  cssBodyCard.style.display = 'none';
+  javascriptBodyCard.style.display = 'block';
 
-    })
+})
